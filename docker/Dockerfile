@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.12-slim
 
 # WORKDIR /Users/zhengnaigong/Documents/mnist-fastapi-docker/app
 WORKDIR /app
