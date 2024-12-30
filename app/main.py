@@ -8,7 +8,7 @@ from PIL import Image
 app = FastAPI()
 
 # Load model
-model = load_model("mnist_model.h5")
+model = load_model("model/mnist_model.h5")
 
 class PredictionResponse(BaseModel):
     predicted_number: int

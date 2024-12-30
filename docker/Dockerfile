@@ -5,8 +5,8 @@ WORKDIR /app
 
 # COPY requirements.txt .
 COPY . .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r docker/requirements.txt
 
 EXPOSE 12347
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "12347"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "12347"]
