@@ -4,8 +4,10 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # COPY requirements.txt .
+COPY docker/requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 COPY . .
-RUN pip install -r docker/requirements.txt
+
 
 EXPOSE 12347
 
