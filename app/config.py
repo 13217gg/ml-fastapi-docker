@@ -1,0 +1,1 @@
+PREDICT_API_URL = "http://localhost:12347/predict"
