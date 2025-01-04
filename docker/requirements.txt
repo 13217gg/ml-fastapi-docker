@@ -3,4 +3,10 @@ uvicorn==0.33.0
 pydantic==2.9.0
 tensorflow==2.17.0
 pillow==10.3.0
+<<<<<<< Updated upstream
 python-multipart==0.0.18
+=======
+python-multipart==0.0.18
+sqlalchemy==1.4.49
+dash==2.18.2
+>>>>>>> Stashed changes

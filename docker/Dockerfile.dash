@@ -1,0 +1,5 @@
+FROM image_from_base:latest
+
+EXPOSE 8050
+
+CMD ["python", "frontend/app.py"]
