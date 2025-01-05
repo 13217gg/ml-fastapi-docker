@@ -1,4 +1,4 @@
-FROM image_from_base:latest
+FROM base-image:latest
 
 EXPOSE 12347
 

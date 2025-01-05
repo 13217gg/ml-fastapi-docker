@@ -1,4 +1,4 @@
-FROM image_from_base:latest
+FROM fastapi-image:latest
 
 EXPOSE 8050
 
