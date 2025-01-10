@@ -1,6 +1,29 @@
-# mnist-fastapi-docker
-version: '3.12-slim'
+version: '3.8'
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "12347:12347"
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=admin
+      - DB_PASSWORD=admin
+      - DB_NAME=housing
+    depends_on:
+      - postgres
 
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=housing
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
-
-
+volumes:
+  postgres_data:

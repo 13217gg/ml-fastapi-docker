@@ -1,11 +1,20 @@
 FROM python:3.12-slim
 
-# WORKDIR /Users/zhengnaigong/Documents/mnist-fastapi-docker/app
 WORKDIR /app
 
-# COPY requirements.txt .
+# Install system dependencies required for psycopg2
+# Always failed building postgress in docker, got following lines from AI
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first for better caching
+COPY docker/requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy the rest of the application
 COPY . .
-RUN pip install -r docker/requirements.txt
 
 EXPOSE 12347
 
